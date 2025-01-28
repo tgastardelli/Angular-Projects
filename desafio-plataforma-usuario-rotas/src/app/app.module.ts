@@ -19,9 +19,6 @@ import { GeneralModule } from './components/general/general.module';
   declarations: [
     AppComponent,
     InicioComponent,
-    TransactionComponent,
-    CreditComponent,
-    DebitComponent,
     PageNotFoundComponent
   ],
   imports: [
