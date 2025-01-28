@@ -9,20 +9,26 @@ import { GeneralComponent } from './components/general/general.component';
 import { BasicComponent } from './components/general/components/basic/basic.component';
 import { ContactComponent } from './components/general/components/contact/contact.component';
 import { AddressComponent } from './components/general/components/address/address.component';
+import { TransactionComponent } from './components/transaction/transaction.component';
+import { CreditComponent } from './components/transaction/components/credit/credit.component';
+import { DebitComponent } from './components/transaction/components/debit/debit.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { GeneralModule } from './components/general/general.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
-    GeneralComponent,
-    BasicComponent,
-    ContactComponent,
-    AddressComponent
+    TransactionComponent,
+    CreditComponent,
+    DebitComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    GeneralModule
   ],
   providers: [],
   bootstrap: [AppComponent]

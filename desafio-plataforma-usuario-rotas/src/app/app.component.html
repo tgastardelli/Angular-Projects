@@ -1,19 +1,19 @@
 <div class="container">
   <div class="card">
     <div class="card__side-menu">
-      <div class="menu__item">
+      <div class="menu__item" routerLinkActive="menu__item--selected" routerLink="/" [routerLinkActiveOptions]="{exact: true}">
         <span class="material-symbols-outlined menu__item-icon">
           home
         </span>
         Início
       </div>
-      <div class="menu__item menu__item--selected">
+      <div class="menu__item" routerLinkActive="menu__item--selected" routerLink="general">
         <span class="material-symbols-outlined menu__item-icon">
           person
         </span>
         Geral
       </div>
-      <div class="menu__item">
+      <div class="menu__item" routerLinkActive="menu__item--selected" routerLink="transactions">
         <span class="material-symbols-outlined menu__item-icon">
           credit_card
         </span>
@@ -22,185 +22,6 @@
     </div>
     <div class="card__content">
       <router-outlet></router-outlet>
-
-      
-      <!-- ================= Página de Transações ================= -->
-      <!-- <div class="transactions"> -->
-        <!-- <div class="transactions__cards-container">
-          <div class="card-group-left card-group-left--selected">
-            <div class="card card--credit">
-              <div class="logo"><img src="https://raw.githubusercontent.com/dasShounak/freeUseImages/main/Visa-Logo-PNG-Image.png" alt="Visa"></div>
-              <div class="chip"><img src="https://raw.githubusercontent.com/dasShounak/freeUseImages/main/chip.png" alt="chip"></div>
-              <div class="number">1234 5678 9012 3456</div>
-              <div class="name">SHOUNAK DAS</div>
-              <div class="from">10/19</div>
-              <div class="to">06/21</div>
-              <div class="ring"></div>
-            </div>
-          </div>
-  
-          <div class="card-group-right">
-            <div class="card card--debit">
-              <div class="logo"><img src="https://raw.githubusercontent.com/dasShounak/freeUseImages/main/Visa-Logo-PNG-Image.png" alt="Visa"></div>
-              <div class="chip"><img src="https://raw.githubusercontent.com/dasShounak/freeUseImages/main/chip.png" alt="chip"></div>
-              <div class="number">1234 5678 9012 3456</div>
-              <div class="name">SHOUNAK DAS</div>
-              <div class="from">10/19</div>
-              <div class="to">06/21</div>
-              <div class="ring"></div>
-            </div>
-          </div>
-        </div> -->
-	<!-- <div class="transactions__content"> -->
-	<!-- Crédito -->
-        <!-- <div class="transactions__items-container">
-          <div class="transactions__items-group">
-            <div class="transactions__item">
-              <span class="transactions__item-dot transactions__item-dot--green"></span>
-              <div class="transactions__item-info transactions__item-info--left">
-                <span>Laura dos Santos</span>
-              </div>
-              <div class="transactions__item-info transactions__item-info--center">
-                <span>12/03/2024</span>
-              </div>
-              <div class="transactions__item-info transactions__item-info--right">
-                <span>R$40,00</span>
-              </div>
-            </div>
-            <div class="transactions__divider"></div>
-            <div class="transactions__item">
-              <span class="transactions__item-dot transactions__item-dot--green"></span>
-              <div class="transactions__item-info transactions__item-info--left">
-                <span>Fábio Oliveira</span>
-              </div>
-              <div class="transactions__item-info transactions__item-info--center">
-                <span>10/03/2024</span>
-              </div>
-              <div class="transactions__item-info transactions__item-info--right">
-                <span>R$60,00</span>
-              </div>
-            </div>
-            <div class="transactions__divider"></div>
-            <div class="transactions__item">
-              <span class="transactions__item-dot transactions__item-dot--green"></span>
-              <div class="transactions__item-info transactions__item-info--left">
-                <span>Caio da Silva</span>
-              </div>
-              <div class="transactions__item-info transactions__item-info--center">
-                <span>12/02/2024</span>
-              </div>
-              <div class="transactions__item-info transactions__item-info--right">
-                <span>R$100,00</span>
-              </div>
-            </div>
-            <div class="transactions__divider"></div>
-            <div class="transactions__item">
-              <span class="transactions__item-dot transactions__item-dot--green"></span>
-              <div class="transactions__item-info transactions__item-info--left">
-                <span>Bruno Alves</span>
-              </div>
-              <div class="transactions__item-info transactions__item-info--center">
-                <span>02/02/2024</span>
-              </div>
-              <div class="transactions__item-info transactions__item-info--right">
-                <span>R$10,00</span>
-              </div>
-            </div>
-            <div class="transactions__divider"></div>
-            <div class="transactions__item">
-              <span class="transactions__item-dot transactions__item-dot--green"></span>
-              <div class="transactions__item-info transactions__item-info--left">
-                <span>Juliana Medeiros</span>
-              </div>
-              <div class="transactions__item-info transactions__item-info--center">
-                <span>05/01/2024</span>
-              </div>
-              <div class="transactions__item-info transactions__item-info--right">
-                <span>R$15,50</span>
-              </div>
-            </div>
-          </div>
-        </div> -->
-        <!-- Débito -->
-        <!-- <div class="transactions__items-container">
-          <div class="transactions__items-group">
-            <div class="transactions__item">
-              <span class="transactions__item-dot transactions__item-dot--red"></span>
-              <div class="transactions__item-info transactions__item-info--left">
-                <span>Laura dos Santos</span>
-              </div>
-              <div class="transactions__item-info transactions__item-info--center">
-                <span>12/03/2024</span>
-              </div>
-              <div class="transactions__item-info transactions__item-info--right">
-                <span>- R$40,00</span>
-              </div>
-            </div>
-            <div class="transactions__divider"></div>
-            <div class="transactions__item">
-              <span class="transactions__item-dot transactions__item-dot--red"></span>
-              <div class="transactions__item-info transactions__item-info--left">
-                <span>Fábio Oliveira</span>
-              </div>
-              <div class="transactions__item-info transactions__item-info--center">
-                <span>10/03/2024</span>
-              </div>
-              <div class="transactions__item-info transactions__item-info--right">
-                <span>- R$60,00</span>
-              </div>
-            </div>
-            <div class="transactions__divider"></div>
-            <div class="transactions__item">
-              <span class="transactions__item-dot transactions__item-dot--red"></span>
-              <div class="transactions__item-info transactions__item-info--left">
-                <span>Caio da Silva</span>
-              </div>
-              <div class="transactions__item-info transactions__item-info--center">
-                <span>12/02/2024</span>
-              </div>
-              <div class="transactions__item-info transactions__item-info--right">
-                <span>- R$100,00</span>
-              </div>
-            </div>
-            <div class="transactions__divider"></div>
-            <div class="transactions__item">
-              <span class="transactions__item-dot transactions__item-dot--red"></span>
-              <div class="transactions__item-info transactions__item-info--left">
-                <span>Bruno Alves</span>
-              </div>
-              <div class="transactions__item-info transactions__item-info--center">
-                <span>02/02/2024</span>
-              </div>
-              <div class="transactions__item-info transactions__item-info--right">
-                <span>- R$10,00</span>
-              </div>
-            </div>
-            <div class="transactions__divider"></div>
-            <div class="transactions__item">
-              <span class="transactions__item-dot transactions__item-dot--red"></span>
-              <div class="transactions__item-info transactions__item-info--left">
-                <span>Juliana Medeiros</span>
-              </div>
-              <div class="transactions__item-info transactions__item-info--center">
-                <span>05/01/2024</span>
-              </div>
-              <div class="transactions__item-info transactions__item-info--right">
-                <span>- R$15,50</span>
-              </div>
-            </div>
-          </div>
-        </div> -->
-	<!-- </div> -->
-      <!-- </div> -->
-
-      <!-- ================= Página Not Found ================= -->
-      <!-- <div class="not-found">
-        <h1 class="not-found__code">404</h1>
-        <p class="not-found__message">Ops, a página que você procura não foi encontrada.</p>
-        <button class="not-found__button">Ir para o Início</button>
-      </div> -->
-
-
     </div>
   </div>
 </div>
