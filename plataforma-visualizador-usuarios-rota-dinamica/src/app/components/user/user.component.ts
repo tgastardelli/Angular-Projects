@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { IUser } from 'src/app/interfaces/user.interface';
-import { UserService } from 'src/app/services/user.service';
+import { UserslistService } from 'src/app/services/users-list.service';
+
 
 @Component({
   selector: 'app-user',
@@ -10,12 +11,17 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UserComponent implements OnInit {
 
+  @Input() public userId: string = '';
   public userList$: Observable<Array<IUser>> = of([]);
 
-  constructor(private readonly _userService: UserService) { }
+  constructor(private readonly _usersListService: UserslistService) { }
 
   ngOnInit() {
-    this.userList$ = this._userService.getUsers();
+    this.userList$ = this._usersListService.getUsers();
+  }
+
+  public selectUser(userId: string): void {
+
   }
 
 }

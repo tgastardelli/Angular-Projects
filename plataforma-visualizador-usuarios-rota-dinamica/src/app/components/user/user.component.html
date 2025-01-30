@@ -1,5 +1,9 @@
-<div *ngFor="let user of userList$ | async">
-  <div>Código: {{ user.id }}</div>
-  <div>Name: {{ user.name }}</div>
-  <br>
+
+
+<div *ngFor="let user of userList$ | async" >
+  <div style="cursor: pointer; padding: 10px;" [routerLink]="['/users', user.id]">
+    <div>Código: {{ user.id }}</div>
+    <div>Name: {{ user.name }}</div>
 </div>
+
+<router-outlet></router-outlet>
