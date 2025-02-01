@@ -1,0 +1,5 @@
+<h1>Comentários:</h1>
+<div *ngFor="let comment of commentsList$ | async">
+    <div>Nome: {{ comment.name }}</div>
+    <div>Conteúdo: {{ comment.body }} </div>
+</div>

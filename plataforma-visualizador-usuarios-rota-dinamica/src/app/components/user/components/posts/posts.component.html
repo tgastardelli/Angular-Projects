@@ -1,5 +1,5 @@
 <h1>Posts:</h1>
-<div *ngFor="let post of postList$ | async" style="padding: 10px;">
+<div *ngFor="let post of postList$ | async" style="padding: 10px; cursor: pointer;" [routerLink]="['../post', post.id]">
     <div>Título: {{ post.title }}</div>
     <div>Conteúdo: {{ post.body }}</div>
 </div>

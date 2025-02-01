@@ -6,6 +6,8 @@ import { UserComponent } from './components/user/user.component';
 import { TodosComponent } from './components/user/components/todos/todos.component';
 import { AlbumsComponent } from './components/user/components/albums/albums.component';
 import { PostsComponent } from './components/user/components/posts/posts.component';
+import { PostComponent } from './components/user/components/post/post.component';
+import { CommentsComponent } from './components/user/components/post/components/comments/comments.component';
 
 
 const routes: Routes = [
@@ -40,6 +42,16 @@ const routes: Routes = [
       {
         path: 'posts',
         component: PostsComponent,
+      },
+      {
+        path: 'post/:postId',
+        component: PostComponent,
+        children: [
+          {
+            path: 'comments',
+            component: CommentsComponent
+          }
+        ]
       }
     ]
   },

@@ -10,6 +10,8 @@ import { UsersListComponent } from './components/users-list/users-list.component
 import { TodosComponent } from './components/user/components/todos/todos.component';
 import { AlbumsComponent } from './components/user/components/albums/albums.component';
 import { PostsComponent } from './components/user/components/posts/posts.component';
+import { PostComponent } from './components/user/components/post/post.component';
+import { CommentsComponent } from './components/user/components/post/components/comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { PostsComponent } from './components/user/components/posts/posts.compone
     TodosComponent,
     AlbumsComponent,
     PostsComponent,
+    PostComponent,
+    CommentsComponent,
   ],
   imports: [
     BrowserModule,
