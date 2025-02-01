@@ -1,0 +1,7 @@
+<h1>Lista de usuários:</h1>
+
+<div *ngFor="let user of usersList$ | async" >
+  <div style="cursor: pointer; padding: 10px;" [routerLink]="['/user', user.id]">
+    <div>Código: {{ user.id }}</div>
+    <div>Name: {{ user.name }}</div>
+</div>

@@ -1,9 +1,12 @@
-
-
-<div *ngFor="let user of userList$ | async" >
-  <div style="cursor: pointer; padding: 10px;" [routerLink]="['/users', user.id]">
-    <div>Código: {{ user.id }}</div>
-    <div>Name: {{ user.name }}</div>
+<div *ngIf="user$ | async as user" style="padding: 10px;">
+    <div>Código: {{user.id}} </div>
+    <div>Nome: {{user.name}}</div>
 </div>
 
+<div style="display: flex; justify-content: space-evenly;">
+    <a routerLink="/">Usuários</a>
+    <a routerLink="todos" routerLinkActive="item-selected">Todos</a>
+    <a routerLink="albums" routerLinkActive="item-selected">Albums</a>
+    <a routerLink="posts" routerLinkActive="item-selected">Posts</a>
+</div>
 <router-outlet></router-outlet>

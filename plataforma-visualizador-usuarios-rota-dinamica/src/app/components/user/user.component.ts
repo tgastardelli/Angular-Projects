@@ -9,19 +9,19 @@ import { UserslistService } from 'src/app/services/users-list.service';
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
-export class UserComponent implements OnInit {
+export class UserComponent implements OnInit{
+  public user$: Observable<IUser> = of({} as IUser)
 
-  @Input() public userId: string = '';
-  public userList$: Observable<Array<IUser>> = of([]);
+  @Input() set userId (userId: string) {
+    console.log(userId);
 
-  constructor(private readonly _usersListService: UserslistService) { }
+    this.user$ = this._userService.getUser(userId);
+  }
+
+  constructor(private readonly _userService: UserslistService) { }
 
   ngOnInit() {
-    this.userList$ = this._usersListService.getUsers();
   }
 
-  public selectUser(userId: string): void {
-
-  }
 
 }

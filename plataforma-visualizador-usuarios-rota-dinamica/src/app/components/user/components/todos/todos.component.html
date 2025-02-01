@@ -1,0 +1,8 @@
+<h1>Todos:</h1>
+
+<div *ngIf="todosList$ | async as todolist">
+    <div *ngFor="let todo of todolist" style="padding: 10px;">
+        <div>Título: {{ todo.title }}</div>
+        <div>Finalizado: {{ todo.completed ? 'Sim' : 'Não' }}</div>
+    </div>
+</div>

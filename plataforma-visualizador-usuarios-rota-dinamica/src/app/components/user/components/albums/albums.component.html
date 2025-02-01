@@ -1,0 +1,5 @@
+<h1>Albums:</h1>
+<div *ngFor="let album of albumsList$ | async" style="padding: 10px;">
+    <div>Código: {{ album.id }}</div>
+    <div>Título: {{ album.title }} </div>
+</div>
