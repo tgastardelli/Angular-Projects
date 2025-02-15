@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { firstValueFrom } from 'rxjs';
+import { firstValueFrom, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -48,4 +48,19 @@ export class PromisesService {
       this._httpClient.get('https://jsonplaceholder.typicode.com/todos?userId=' + userId)
     );
   }
+
+  public getPromiseInterval() {
+    return firstValueFrom(new Observable((observer) => {
+      setInterval(() => {
+        console.log('interval');
+
+        observer.next('valor emitido');
+      }, 1000);
+
+      return () => {
+        console.log('Observable complete');
+      }
+    })
+    )
+  };
 }

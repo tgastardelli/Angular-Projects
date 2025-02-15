@@ -12,6 +12,9 @@ export class PromisesComponent {
   private readonly _promisesService = inject(PromisesService);
 
   ngOnInit() {
+    this._promisesService.getPromiseInterval().then((value) => {
+      console.log('Then ', value);
+    })
     // this._promisesService.promiseSimples().then((value) => {
     //   console.log('Then ', value);
     // });
