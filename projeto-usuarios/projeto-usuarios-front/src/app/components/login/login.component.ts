@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from '../services/login.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -28,7 +29,15 @@ export class LoginComponent {
 
         this._router.navigate(['/user-infos']);
       },
-      error: () => {},
+      error: (error: HttpErrorResponse ) => {
+        const UNAUTHORIZED_ERROR_CODE = 401;
+
+        if(error.status === UNAUTHORIZED_ERROR_CODE) {
+          this.loginForm.setErrors({'invalidCredentials' : true});
+        } else {
+          this.loginForm.setErrors({ 'generalCredentialsError' : true });
+        }
+      },
     })
   }
 }
