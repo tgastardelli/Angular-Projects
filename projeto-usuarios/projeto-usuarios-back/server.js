@@ -29,8 +29,16 @@ app.post('/login', (req, res) => {
     return res.json({token: userToken});
 });
 
+
+app.put('/update-user', (req, res) => {
+    const { name, email, username, password } = req.body;
+
+    
+
+})
+
 app.post('/validate-token', authenticateToken, (req, res) => {
-    res.json({ message: 'Token válido' });
+    res.json({ message: 'Token válido', username: req.username });
 });
 
 
