@@ -1,0 +1,10 @@
+Configurações Iniciais
+- primeiramente foi criado o arquivo index
+- depois criado um arquivo ts
+- no arquivo index, foi incluso script src="./app.js"></script
+- para executar o projetoe então foi utilizado o comando tsc app.ts --watch para ficar ouvindo o arquivo
+- e depois o live-server para abrir um navegador em uma rota
+- depois criado o arquivo tsconfig com o comando tsc --init
+- gerando todos os arquivos um arquivo JS e atualizando os mesmos
+- gerando o package.json com o comando npm init --yes (flag yes para não fazer as perguntas inicias)
+- instalando o typescript no projeto npm i --save-dev typescript
